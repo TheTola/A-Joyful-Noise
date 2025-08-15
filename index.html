@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Joyful Noise</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Preload all slide & control images for snappy performance -->
+  <link rel="preload" as="image" href="gallery/cover.png">
+  <link rel="preload" as="image" href="gallery/letter.png">
+  <link rel="preload" as="image" href="gallery/wall.png">
+  <link rel="preload" as="image" href="gallery/back.png">
+  <link rel="preload" as="image" href="gallery/icons/ppage.png">
+  <link rel="preload" as="image" href="gallery/icons/npage.png">
+  <link rel="preload" as="image" href="gallery/icons/curtain_left.png">
+  <link rel="preload" as="image" href="gallery/icons/curtain_right.png">
+  <link rel="preload" as="image" href="gallery/icons/volon.png">
+  <link rel="preload" as="image" href="gallery/icons/voloff.png">
+
+  <!-- Preload sounds to avoid autoplay restrictions -->
+  <link rel="preload" as="audio" href="gallery/sounds/glissando.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip1.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip2.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip3.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip4.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip5.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip6.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip7.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip8.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip9.mp3">
+  <link rel="preload" as="audio" href="gallery/sounds/flip10.mp3">
+</head>
+
+<body>
+  <!-- Curtain intro -->
+  <div id="curtain-overlay">
+    <img id="curtain-left"  src="gallery/icons/curtain_left.png"  alt="curtain left">
+    <img id="curtain-right" src="gallery/icons/curtain_right.png" alt="curtain right">  
+    <button id="begin-button">Tap to Begin</button>
+  </div>
+
+  <!-- Slides container -->
+  <div id="slideshow">
+    <section class="slide" id="slide-0">
+      <img src="gallery/cover.png" alt="Cover Page">
+    </section>
+    <section class="slide" id="slide-1">
+      <img src="gallery/letter.png" alt="Main Letter">
+    </section>
+    <section class="slide" id="slide-2">
+      <!-- Text Wall slide -->
+      <img src="gallery/wall.png" alt="Text Wall Background">
+      <button id="close-text" title="Close">&times;</button>
+      <div class="text-wall">
+        <div class="text-wall-content"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><meta charset="utf-8" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: "\2610"; }
+li.checked::marker { content: "\2612"; }
+</style></head><body style=" font-family:'Segoe UI'; font-size:11px; font-weight:400; font-style:normal;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Papyrus'; font-size:50pt; font-weight:700; color:#ff0000;">Dear Shariana Parker,</span></p>
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Papyrus'; font-size:16pt; color:#ff0000;">Hello, this is Tola.</span></p>
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Papyrus'; font-size:16pt; color:#ff0000;">For some time now, I’ve been making it a habit to send a letter of encouragement after each E-date I go on. I wanted to let you know how much I truly enjoyed spending time with you on this one.</span></p>
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Papyrus'; font-size:16pt; color:#ff0000;">It was wonderful to see your heart for encouragement, worship, and shepherding. Those qualities are such a blessing to others and a reflection of God’s work in you.</span></p>
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Papyrus'; font-size:16pt; color:#ff0000;">A passage that comes to mind is about being a son (or daughter) of encouragement. Acts 4:36–37 says:<br />&quot;Joseph, a Levite from Cyprus, whom the apostles called Barnabas (which means ‘son of encouragement’), sold a field he owned and brought the money and put it at the apostles’ feet.&quot;</span></p>
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Papyrus'; font-size:16pt; color:#ff0000;">Just as Barnabas lifted others up and strengthened the church, I see that same spirit in you. Keep shining that light and building up the people around you—it’s making more of an impact than you may realize. </span></p></body></html></div>
+      </div>
+    </section>
+    <section class="slide" id="slide-3">
+      <img src="gallery/back.png" alt="Final Backdrop">
+    </section>
+
+    <!-- Navigation arrows -->
+    <button id="prev"><img src="gallery/icons/ppage.png" alt="Previous"></button>
+    <button id="next"><img src="gallery/icons/npage.png" alt="Next"></button>
+    <div id="progress" aria-live="polite">Page 1 of 4</div>
+
+    <!-- Show message icon -->
+    <img
+      id="open-text"
+      src="gallery/icons/showmessageicon.png"
+      alt="Show Message"
+      style="display:none; width:64px; height:64px; cursor:pointer; z-index:10;"
+    />
+  </div>
+
+  <!-- Volume control -->
+  <div id="volume-control">
+    <img
+      id="volume-icon"
+      src="gallery/icons/volon.png"
+      alt="Volume"
+      style="cursor:pointer;"
+    />
+    <input
+      type="range"
+      id="volume-slider"
+      min="0"
+      max="100"
+      value="100"
+      oninput="handleVolumeChange(this.value)"
+      style="display:none;"
+    />
+  </div>
+
+  <!-- Audio player -->
+    <audio id="bg-music" autoplay loop><source src="gallery/sounds/music.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio>
+<script>
+  const INITIAL_VOLUME = 1.000;
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
+</html>
+
